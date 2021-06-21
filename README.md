@@ -132,7 +132,7 @@ What Casbin does NOT do:
 ## Installation
 
 ```
-pip install casbin
+pip install asynccasbin
 ```
 
 ## Documentation
