@@ -56,11 +56,15 @@ class DistributedEnforcer(SyncedEnforcer):
             except Exception as e:
                 self.logger.log("An exception occurred: " + e)
 
-        effected = self.get_model().remove_policies_with_effected(sec, ptype, rules)
+        effected = self.get_model().remove_policies_with_effected(
+            sec, ptype, rules
+        )
 
         if sec == "g":
             try:
-                self.build_incremental_role_links(PolicyOp.Policy_remove, ptype, rules)
+                self.build_incremental_role_links(
+                    PolicyOp.Policy_remove, ptype, rules
+                )
             except Exception as e:
                 self.logger.log("An exception occurred: " + e)
                 return effected
@@ -110,7 +114,9 @@ class DistributedEnforcer(SyncedEnforcer):
 
         self.get_model().clear_policy()
 
-    def update_policy_self(self, should_persist, sec, ptype, old_rule, new_rule):
+    def update_policy_self(
+        self, should_persist, sec, ptype, old_rule, new_rule
+    ):
         """
         update_policy_self provides a method for dispatcher to update an authorization rule from the current policy.
         """
@@ -122,7 +128,9 @@ class DistributedEnforcer(SyncedEnforcer):
                 self.logger.log("An exception occurred: " + e)
                 return False
 
-        rule_updated = self.get_model().update_policy(sec, ptype, old_rule, new_rule)
+        rule_updated = self.get_model().update_policy(
+            sec, ptype, old_rule, new_rule
+        )
 
         if not rule_updated:
             return False

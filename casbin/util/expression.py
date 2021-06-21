@@ -20,7 +20,7 @@ class SimpleEval(SimpleEval):
             self.expr_parsed_value = ast.parse(expr.strip()).body[0].value
 
     def eval(self, names=None):
-        """evaluate an expresssion, using the operators, functions and
+        """evaluate an expression, using the operators, functions and
         names previously set up."""
 
         if names:

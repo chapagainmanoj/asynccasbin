@@ -49,7 +49,9 @@ class Model(Policy):
     def _load_section(self, cfg, sec):
         i = 1
         while True:
-            if not self._load_assertion(cfg, sec, sec + self._get_key_suffix(i)):
+            if not self._load_assertion(
+                cfg, sec, sec + self._get_key_suffix(i)
+            ):
                 break
             else:
                 i = i + 1

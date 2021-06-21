@@ -38,10 +38,12 @@ class FilteredAdapter(FileAdapter, persist.FilteredAdapter):
         except:
             raise RuntimeError("invalid filter type")
 
-        self.load_filtered_policy_file(model, filter_value, persist.load_policy_line)
+        self.load_filtered_policy_file(
+            model, filter_value, persist.load_policy_line
+        )
         self.filtered = True
 
-    def load_filtered_policy_file(self, model, filter, hanlder):
+    def load_filtered_policy_file(self, model, filter, handler):
         with open(self._file_path, "rb") as file:
             while True:
                 line = file.readline()
@@ -53,7 +55,7 @@ class FilteredAdapter(FileAdapter, persist.FilteredAdapter):
                 if filter_line(line, filter):
                     continue
 
-                hanlder(line, model)
+                handler(line, model)
 
     # is_filtered returns true if the loaded policy has been filtered.
     def is_filtered(self):

@@ -15,13 +15,13 @@ with open(path.join(here, "requirements.txt"), encoding="utf-8") as f:
 install_requires = [x.strip() for x in all_reqs if "git+" not in x]
 
 setuptools.setup(
-    name="casbin",
-    author="TechLee",
-    author_email="techlee@qq.com",
-    description="An authorization library that supports access control models like ACL, RBAC, ABAC in Python",
+    name="asynccasbin",
+    author="Manoj Chapagain",
+    author_email="chapagainmanoj35@gmail.com",
+    description="An async authorization library that supports access control models like ACL, RBAC, ABAC in Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/casbin/pycasbin",
+    url="https://github.com/chapagainmanoj/pycasbin",
     keywords=[
         "casbin",
         "acl",
@@ -35,7 +35,7 @@ setuptools.setup(
     ],
     packages=setuptools.find_packages(exclude=("tests",)),
     install_requires=install_requires,
-    python_requires=">=3.3",
+    python_requires=">=3.7",
     license="Apache 2.0",
     classifiers=[
         "Programming Language :: Python :: 3.3",

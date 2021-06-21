@@ -41,7 +41,9 @@ class Assertion:
             )
         for rule in rules:
             if len(rule) < count:
-                raise TypeError("grouping policy elements do not meet role definition")
+                raise TypeError(
+                    "grouping policy elements do not meet role definition"
+                )
             if len(rule) > count:
                 rule = rule[:count]
             if op == PolicyOp.Policy_add:

@@ -60,7 +60,7 @@ def has_eval(s):
 
 
 def replace_eval(expr, rules):
-    """replace all occurences of function eval with rules"""
+    """replace all occurrences of function eval with rules"""
     pos = 0
     match = eval_reg.search(expr, pos)
     while match:

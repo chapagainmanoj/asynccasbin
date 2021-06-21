@@ -50,7 +50,7 @@ class CoreEnforcer:
 
         self.model_path = model_path
 
-    # can't called withing __init__
+    # can't called within __init__
     def init_with_model_and_adapter(self, m, adapter=None):
         """initializes an enforcer with a model and a database adapter."""
 
@@ -71,8 +71,9 @@ class CoreEnforcer:
         self._initialize()
 
         # Do not initialize the full policy when using a filtered adapter
-        if self.adapter and not self.is_filtered():
-            self.load_policy()
+
+        # if self.adapter and not self.is_filtered():
+        #     self.load_policy()
 
     def _initialize(self):
         self.rm_map = dict()
@@ -99,7 +100,9 @@ class CoreEnforcer:
 
     def load_model(self):
         """reloads the model from the model CONF file.
-        Because the policy is attached to a model, so the policy is invalidated and needs to be reloaded by calling LoadPolicy().
+        Because the policy is attached to a model, so
+        the policy is invalidated and needs
+        to be reloaded by calling LoadPolicy().
         """
 
         self.model = self.new_model()
@@ -183,7 +186,8 @@ class CoreEnforcer:
             self.build_role_links()
 
     async def load_increment_filtered_policy(self, filter):
-        """LoadIncrementalFilteredPolicy append a filtered policy from file/database."""
+        """LoadIncrementalFilteredPolicy append a filtered
+        policy from file/database."""
         if not hasattr(self.adapter, "is_filtered"):
             raise ValueError(
                 "filtered policies are not supported by this adapter"
@@ -212,17 +216,20 @@ class CoreEnforcer:
 
     def enable_enforce(self, enabled=True):
         """changes the enforcing state of Casbin,
-        when Casbin is disabled, all access will be allowed by the Enforce() function.
+        when Casbin is disabled, all access will be
+        allowed by the Enforce() function.
         """
 
         self.enabled = enabled
 
     def enable_auto_save(self, auto_save):
-        """controls whether to save a policy rule automatically to the adapter when it is added or removed."""
+        """controls whether to save a policy rule
+        automatically to the adapter when it is added or removed."""
         self.auto_save = auto_save
 
     def enable_auto_build_role_links(self, auto_build_role_links):
-        """controls whether to rebuild the role inheritance relations when a role is added or deleted."""
+        """controls whether to rebuild the role inheritance
+        relations when a role is added or deleted."""
         self.auto_build_role_links = auto_build_role_links
 
     def build_role_links(self):
@@ -238,26 +245,29 @@ class CoreEnforcer:
         try:
             self.rm_map[ptype].add_matching_func(fn)
             return True
-        except:
+        except Exception:
             return False
 
     def add_named_domain_matching_func(self, ptype, fn):
-        """add_named_domain_matching_func add MatchingFunc by ptype to RoleManager"""
+        """add_named_domain_matching_func add
+        MatchingFunc by ptype to RoleManager"""
         try:
             self.rm_map[ptype].add_domain_matching_func(fn)
             return True
-        except:
+        except Exception:
             return False
 
     def enforce(self, *rvals):
-        """decides whether a "subject" can access a "object" with the operation "action",
+        """decides whether a "subject" can access a "
+        object" with the operation "action",
         input parameters are usually: (sub, obj, act).
         """
         result, _ = self.enforce_ex(*rvals)
         return result
 
     def enforce_ex(self, *rvals):
-        """decides whether a "subject" can access a "object" with the operation "action",
+        """decides whether a "subject" can
+        access a "object" with the operation "action",
         input parameters are usually: (sub, obj, act).
         return judge result with reason
         """
@@ -348,9 +358,7 @@ class CoreEnforcer:
 
         else:
             if has_eval:
-                raise RuntimeError(
-                    "please make sure rule exists in policy when using eval() in matcher"
-                )
+                raise RuntimeError("make sure rule exists using eval()")
 
             parameters = r_parameters.copy()
 
@@ -376,8 +384,12 @@ class CoreEnforcer:
         if result:
             self.logger.info(req_str)
         else:
-            # leaving this in error for now, if it's very noise this can be changed to info or debug
-            self.logger.error(req_str)
+            # leaving this in error for now, if it's very
+            # noise this can be changed to info or debug
+            # self.logger.error(req_str)
+            self.logger.error(
+                "Some issue occurred. please reference req_str for detail"
+            )
 
         explain_rule = []
         if explain_index != -1 and explain_index < policy_len:

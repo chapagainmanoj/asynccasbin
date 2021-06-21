@@ -14,7 +14,9 @@ def get_effector(expr):
         return AllowOverrideEffector()
     elif expr == "!some(where (p_eft == deny))":
         return DenyOverrideEffector()
-    elif expr == "some(where (p_eft == allow)) && !some(where (p_eft == deny))":
+    elif (
+        expr == "some(where (p_eft == allow)) && !some(where (p_eft == deny))"
+    ):
         return AllowAndDenyEffector()
     elif expr == "priority(p_eft) || deny":
         return PriorityEffector()

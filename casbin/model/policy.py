@@ -18,7 +18,9 @@ class Policy:
 
     def build_incremental_role_links(self, rm, op, sec, ptype, rules):
         if sec == "g":
-            self.model.get(sec).get(ptype).build_incremental_role_links(rm, op, rules)
+            self.model.get(sec).get(ptype).build_incremental_role_links(
+                rm, op, rules
+            )
 
     def print_policy(self):
         """Log using info"""
@@ -29,7 +31,9 @@ class Policy:
                 continue
 
             for key, ast in self.model[sec].items():
-                self.logger.info("{} : {} : {}".format(key, ast.value, ast.policy))
+                self.logger.info(
+                    "{} : {} : {}".format(key, ast.value, ast.policy)
+                )
 
     def clear_policy(self):
         """clears all current policy."""
@@ -107,7 +111,9 @@ class Policy:
             if old_rule[priority_index] == new_rule[priority_index]:
                 ast.policy[rule_index] = new_rule
             else:
-                raise Exception("New rule should have the same priority with old rule.")
+                raise Exception(
+                    "New rule should have the same priority with old rule."
+                )
         else:
             ast.policy[rule_index] = new_rule
 
@@ -134,7 +140,9 @@ class Policy:
 
         if "p_priority" in ast.tokens:
             priority_index = ast.tokens.index("p_priority")
-            for idx, old_rule, new_rule in zip(old_rules_index, old_rules, new_rules):
+            for idx, old_rule, new_rule in zip(
+                old_rules_index, old_rules, new_rules
+            ):
                 if old_rule[priority_index] == new_rule[priority_index]:
                     ast.policy[idx] = new_rule
                 else:
@@ -142,7 +150,9 @@ class Policy:
                         "New rule should have the same priority with old rule."
                     )
         else:
-            for idx, old_rule, new_rule in zip(old_rules_index, old_rules, new_rules):
+            for idx, old_rule, new_rule in zip(
+                old_rules_index, old_rules, new_rules
+            ):
                 ast.policy[idx] = new_rule
 
         return True

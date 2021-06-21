@@ -201,7 +201,9 @@ class SyncedEnforcer:
     def get_filtered_named_policy(self, ptype, field_index, *field_values):
         """gets all the authorization rules in the named policy, field filters can be specified."""
         with self._rl:
-            return self._e.get_filtered_named_policy(ptype, field_index, *field_values)
+            return self._e.get_filtered_named_policy(
+                ptype, field_index, *field_values
+            )
 
     def get_grouping_policy(self):
         """gets all the role inheritance rules in the policy."""
@@ -211,14 +213,18 @@ class SyncedEnforcer:
     def get_filtered_grouping_policy(self, field_index, *field_values):
         """gets all the role inheritance rules in the policy, field filters can be specified."""
         with self._rl:
-            return self._e.get_filtered_grouping_policy(field_index, *field_values)
+            return self._e.get_filtered_grouping_policy(
+                field_index, *field_values
+            )
 
     def get_named_grouping_policy(self, ptype):
         """gets all the role inheritance rules in the policy."""
         with self._rl:
             return self._e.get_named_grouping_policy(ptype)
 
-    def get_filtered_named_grouping_policy(self, ptype, field_index, *field_values):
+    def get_filtered_named_grouping_policy(
+        self, ptype, field_index, *field_values
+    ):
         """gets all the role inheritance rules in the policy, field filters can be specified."""
         with self._rl:
             return self._e.get_filtered_named_grouping_policy(
@@ -307,14 +313,18 @@ class SyncedEnforcer:
     def remove_filtered_grouping_policy(self, field_index, *field_values):
         """removes a role inheritance rule from the current policy, field filters can be specified."""
         with self._wl:
-            return self._e.remove_filtered_grouping_policy(field_index, *field_values)
+            return self._e.remove_filtered_grouping_policy(
+                field_index, *field_values
+            )
 
     def remove_named_grouping_policy(self, ptype, *params):
         """removes a role inheritance rule from the current named policy."""
         with self._wl:
             return self._e.remove_named_grouping_policy(ptype, *params)
 
-    def remove_filtered_named_grouping_policy(self, ptype, field_index, *field_values):
+    def remove_filtered_named_grouping_policy(
+        self, ptype, field_index, *field_values
+    ):
         """removes a role inheritance rule from the current named policy, field filters can be specified."""
         with self._wl:
             return self._e.remove_filtered_named_grouping_policy(
