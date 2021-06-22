@@ -155,11 +155,11 @@ class Enforcer(ManagementEnforcer):
         res = []
         for role in roles:
             if domain:
-                permissions = self.get_permissions_for_user_in_domain(
+                permissions = await self.get_permissions_for_user_in_domain(
                     role, domain
                 )
             else:
-                permissions = self.get_permissions_for_user(role)
+                permissions = await self.get_permissions_for_user(role)
 
             res.extend(permissions)
 

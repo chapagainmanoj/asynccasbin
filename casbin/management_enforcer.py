@@ -9,7 +9,7 @@ class ManagementEnforcer(InternalEnforcer):
     async def get_all_subjects(self):
         """gets the list of subjects that
         show up in the current policy."""
-        return self.get_all_named_subjects("p")
+        return await self.get_all_named_subjects("p")
 
     async def get_all_named_subjects(self, ptype):
         """gets the list of subjects
@@ -19,7 +19,7 @@ class ManagementEnforcer(InternalEnforcer):
     async def get_all_objects(self):
         """gets the list of objects that
         show up in the current policy."""
-        return self.get_all_named_objects("p")
+        return await self.get_all_named_objects("p")
 
     async def get_all_named_objects(self, ptype):
         """gets the list of objects that
@@ -29,7 +29,7 @@ class ManagementEnforcer(InternalEnforcer):
     async def get_all_actions(self):
         """gets the list of actions that
         show up in the current policy."""
-        return self.get_all_named_actions("p")
+        return await self.get_all_named_actions("p")
 
     async def get_all_named_actions(self, ptype):
         """gets the list of actions that
@@ -39,7 +39,7 @@ class ManagementEnforcer(InternalEnforcer):
     async def get_all_roles(self):
         """gets the list of roles that
         show up in the current named policy."""
-        return self.get_all_named_roles("g")
+        return await self.get_all_named_roles("g")
 
     async def get_all_named_roles(self, ptype):
         """gets all the authorization
@@ -49,12 +49,14 @@ class ManagementEnforcer(InternalEnforcer):
     async def get_policy(self):
         """gets all the authorization
         rules in the policy."""
-        return self.get_named_policy("p")
+        return await self.get_named_policy("p")
 
     async def get_filtered_policy(self, field_index, *field_values):
         """gets all the authorization rules in the
         policy, field filters can be specified."""
-        return self.get_filtered_named_policy("p", field_index, *field_values)
+        return await self.get_filtered_named_policy(
+            "p", field_index, *field_values
+        )
 
     async def get_named_policy(self, ptype):
         """gets all the authorization
@@ -72,12 +74,12 @@ class ManagementEnforcer(InternalEnforcer):
 
     async def get_grouping_policy(self):
         """gets all the role inheritance rules in the policy."""
-        return self.get_named_grouping_policy("g")
+        return await self.get_named_grouping_policy("g")
 
     async def get_filtered_grouping_policy(self, field_index, *field_values):
         """gets all the role inheritance rules in the policy,
         field filters can be specified."""
-        return self.get_filtered_named_grouping_policy(
+        return await self.get_filtered_named_grouping_policy(
             "g", field_index, *field_values
         )
 
@@ -96,7 +98,7 @@ class ManagementEnforcer(InternalEnforcer):
 
     async def has_policy(self, *params):
         """determines whether an authorization rule exists."""
-        return self.has_named_policy("p", *params)
+        return await self.has_named_policy("p", *params)
 
     async def has_named_policy(self, ptype, *params):
         """determines whether a named authorization rule exists."""
@@ -123,7 +125,7 @@ class ManagementEnforcer(InternalEnforcer):
         Otherwise the function returns true for the corresponding
         rule by adding the new rule.
         """
-        return self.add_named_policies("p", rules)
+        return await self.add_named_policies("p", rules)
 
     async def add_named_policy(self, ptype, *params):
         """adds an authorization rule to the current named policy.
@@ -327,6 +329,6 @@ class ManagementEnforcer(InternalEnforcer):
             self.build_role_links()
         return rule_removed
 
-    async def add_function(self, name, func):
+    def add_function(self, name, func):
         """adds a customized function."""
         self.fm.add_function(name, func)
