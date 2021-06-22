@@ -193,7 +193,7 @@ class Enforcer(ManagementEnforcer):
 
     async def get_roles_for_user_in_domain(self, name, domain):
         """gets the roles that a user has inside a domain."""
-        return await self.model.model["g"]["g"].rm.get_roles(name, domain)
+        return self.model.model["g"]["g"].rm.get_roles(name, domain)
 
     async def get_users_for_role_in_domain(self, name, domain):
         """gets the users that has a role inside a domain."""
