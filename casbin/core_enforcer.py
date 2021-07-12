@@ -166,7 +166,8 @@ class CoreEnforcer:
         await self.adapter.load_policy(self.model)
 
         self.init_rm_map()
-        self.model.print_policy()
+        self.logger.info("Policies loaded")
+        # self.model.print_policy()
         if self.auto_build_role_links:
             self.build_role_links()
 
@@ -181,7 +182,8 @@ class CoreEnforcer:
 
         await self.adapter.load_filtered_policy(self.model, filter)
         self.init_rm_map()
-        self.model.print_policy()
+        self.logger.info("Filtered policies loaded")
+        # self.model.print_policy()
         if self.auto_build_role_links:
             self.build_role_links()
 
