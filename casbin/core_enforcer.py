@@ -194,7 +194,7 @@ class CoreEnforcer:
             )
 
         await self.adapter.load_filtered_policy(self.model, filter)
-        self.model.print_policy()
+        # self.model.print_policy()
         if self.auto_build_role_links:
             self.build_role_links()
 
