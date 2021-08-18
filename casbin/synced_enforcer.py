@@ -21,6 +21,34 @@ class AtomicBool:
             self._value = value
 
 
+class PolicyLoaderThread(threading.Thread):
+    def __init__(self, enforcer, interval=10):
+        super(PolicyLoaderThread, self).__init__(daemon=True)
+        self._interval = interval
+        self._stop = threading.Event()
+        self._io_loop = asyncio.get_event_loop()
+        self.enforcer = enforcer
+
+    async def task(self):
+        await self.enforcer.load_policy()
+
+    def run(self):
+        self._io_loop.create_task(self.task())  # loading policy at startup
+        while not self.stopped:
+            self._stop.wait(self._interval)
+            if self.stopped:
+                continue
+            self._io_loop.create_task(self.task())
+
+    def stop(self):
+        self._stop.set()
+        self._io_loop.close()
+
+    @property
+    def stopped(self):
+        return self._stop.is_set()
+
+
 class SyncedEnforcer:
 
     """SyncedEnforcer wraps Enforcer and provides synchronized access.
@@ -48,14 +76,13 @@ class SyncedEnforcer:
         if self.is_auto_loading_running():
             return
         self._auto_loading.value = True
-        self._auto_loading_thread = threading.Thread(
-            target=self._auto_load_policy, args=[interval], daemon=True
-        )
+        self._auto_loading_thread = PolicyLoaderThread(enforcer=self, interval=interval)
         self._auto_loading_thread.start()
 
     def stop_auto_load_policy(self):
         """stops the thread started by start_auto_load_policy"""
         if self.is_auto_loading_running():
+            self._auto_loading_thread.stop()
             self._auto_loading.value = False
 
     def get_model(self):

@@ -148,7 +148,7 @@ class Enforcer(ManagementEnforcer):
         get_permissions_for_user("alice") can only get: [["alice", "data2", "read"]].
         But get_implicit_permissions_for_user("alice") will get: [["admin", "data1", "read"], ["alice", "data2", "read"]].
         """
-        roles = self.get_implicit_roles_for_user(user, domain)
+        roles = await self.get_implicit_roles_for_user(user, domain)
 
         roles.insert(0, user)
 
