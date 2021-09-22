@@ -1,84 +1,76 @@
 # Semantic Versioning Changelog
 
-## [1.1.2](https://github.com/casbin/pycasbin/compare/v1.1.1...v1.1.2) (2021-06-07)
+## [1.1.7]
 
+- simpleeval broken dependencies fixed
+
+## [1.1.2](https://github.com/casbin/pycasbin/compare/v1.1.1...v1.1.2) (2021-06-07)
 
 ### Bug Fixes
 
-* start auto loading policy for SyncedEnforcer ([4724f7a](https://github.com/casbin/pycasbin/commit/4724f7a2c137ba5357634aee1eebc1b1c28959f9))
+- start auto loading policy for SyncedEnforcer ([4724f7a](https://github.com/casbin/pycasbin/commit/4724f7a2c137ba5357634aee1eebc1b1c28959f9))
 
 ## [1.1.1](https://github.com/casbin/pycasbin/compare/v1.1.0...v1.1.1) (2021-05-24)
 
-
 ### Bug Fixes
 
-* function 'keyMatch3' not defined ([e97bb6a](https://github.com/casbin/pycasbin/commit/e97bb6aadc58faca33d6c606d9bae31adfbd2259))
+- function 'keyMatch3' not defined ([e97bb6a](https://github.com/casbin/pycasbin/commit/e97bb6aadc58faca33d6c606d9bae31adfbd2259))
 
 # [1.1.0](https://github.com/casbin/pycasbin/compare/v1.0.6...v1.1.0) (2021-05-23)
 
-
 ### Bug Fixes
 
-* enforce_ex now works fine when it was disabled ([15f58c9](https://github.com/casbin/pycasbin/commit/15f58c9af82b10e1a6dd4ce584ea39f1235031b9))
-
+- enforce_ex now works fine when it was disabled ([15f58c9](https://github.com/casbin/pycasbin/commit/15f58c9af82b10e1a6dd4ce584ea39f1235031b9))
 
 ### Features
 
-* Use named loggers ([#153](https://github.com/casbin/pycasbin/issues/153)) ([40e7f00](https://github.com/casbin/pycasbin/commit/40e7f001c77034854e0916dba13bc87f30c2ce7d))
+- Use named loggers ([#153](https://github.com/casbin/pycasbin/issues/153)) ([40e7f00](https://github.com/casbin/pycasbin/commit/40e7f001c77034854e0916dba13bc87f30c2ce7d))
 
 ## [1.0.6](https://github.com/casbin/pycasbin/compare/v1.0.5...v1.0.6) (2021-05-13)
 
-
 ### Bug Fixes
 
-* optimized install_requires parsing process ([34d3a4f](https://github.com/casbin/pycasbin/commit/34d3a4f5cfb120e0b074c557e831c74fb0e3101f))
+- optimized install_requires parsing process ([34d3a4f](https://github.com/casbin/pycasbin/commit/34d3a4f5cfb120e0b074c557e831c74fb0e3101f))
 
 ## [1.0.5](https://github.com/casbin/pycasbin/compare/v1.0.4...v1.0.5) (2021-05-12)
 
-
 ### Bug Fixes
 
-* replace fnmatch with wcmatch for glob match, keep same behavior with Go Casbin ([#149](https://github.com/casbin/pycasbin/issues/149)) ([906f40c](https://github.com/casbin/pycasbin/commit/906f40c6c6b0d9e31104ca3ea92e4a8498c30619))
+- replace fnmatch with wcmatch for glob match, keep same behavior with Go Casbin ([#149](https://github.com/casbin/pycasbin/issues/149)) ([906f40c](https://github.com/casbin/pycasbin/commit/906f40c6c6b0d9e31104ca3ea92e4a8498c30619))
 
 ## [1.0.4](https://github.com/casbin/pycasbin/compare/v1.0.3...v1.0.4) (2021-04-24)
 
-
 ### Performance Improvements
 
-* remove unused variable ([e642898](https://github.com/casbin/pycasbin/commit/e642898c5a0b9a8ccefb2104321985b82f420aa4))
+- remove unused variable ([e642898](https://github.com/casbin/pycasbin/commit/e642898c5a0b9a8ccefb2104321985b82f420aa4))
 
 ## [1.0.3](https://github.com/casbin/pycasbin/compare/v1.0.2...v1.0.3) (2021-04-23)
 
-
 ### Bug Fixes
 
-* r.user.name -> r_user_name instead of r_user.name in ABAC model ([192529e](https://github.com/casbin/pycasbin/commit/192529e11a8ddc848f3f2ee22c448c8afaf41f1b))
+- r.user.name -> r_user_name instead of r_user.name in ABAC model ([192529e](https://github.com/casbin/pycasbin/commit/192529e11a8ddc848f3f2ee22c448c8afaf41f1b))
 
 ## [1.0.2](https://github.com/casbin/pycasbin/compare/v1.0.1...v1.0.2) (2021-04-12)
 
-
 ### Bug Fixes
 
-* rename enforceEx() to enforce_ex() ([#143](https://github.com/casbin/pycasbin/issues/143)) ([e52351a](https://github.com/casbin/pycasbin/commit/e52351a41c91d2546dddbc4f448c59ff70e9de1a))
+- rename enforceEx() to enforce_ex() ([#143](https://github.com/casbin/pycasbin/issues/143)) ([e52351a](https://github.com/casbin/pycasbin/commit/e52351a41c91d2546dddbc4f448c59ff70e9de1a))
 
 ## [1.0.1](https://github.com/casbin/pycasbin/compare/v1.0.0...v1.0.1) (2021-04-09)
 
-
 ### Bug Fixes
 
-* wrong domain length judge and bug in build_incremental_role_links() ([#139](https://github.com/casbin/pycasbin/issues/139)) ([51b8833](https://github.com/casbin/pycasbin/commit/51b883301e0f2c104ef31658e2074ac6ca586451))
+- wrong domain length judge and bug in build_incremental_role_links() ([#139](https://github.com/casbin/pycasbin/issues/139)) ([51b8833](https://github.com/casbin/pycasbin/commit/51b883301e0f2c104ef31658e2074ac6ca586451))
 
 # [1.0.0](https://github.com/casbin/pycasbin/compare/v0.20.0...v1.0.0) (2021-04-06)
 
-
 ### Features
 
-* add EnforceEx ([#134](https://github.com/casbin/pycasbin/issues/134)) ([c577e1d](https://github.com/casbin/pycasbin/commit/c577e1da65e3ddf4cf360d851f9f9a5ef6c94650))
-
+- add EnforceEx ([#134](https://github.com/casbin/pycasbin/issues/134)) ([c577e1d](https://github.com/casbin/pycasbin/commit/c577e1da65e3ddf4cf360d851f9f9a5ef6c94650))
 
 ### BREAKING CHANGES
 
-* Custom effectors will need a rewrite
+- Custom effectors will need a rewrite
 
 Signed-off-by: Andreas Bichinger <andreas.bichinger@gmail.com>
 
@@ -86,140 +78,120 @@ Co-authored-by: Andreas Bichinger <andreas.bichinger@gmail.com>
 
 # [0.20.0](https://github.com/casbin/pycasbin/compare/v0.19.2...v0.20.0) (2021-04-06)
 
-
 ### Features
 
-* added distributed enforcer file along with respective unit tests ([f167ebf](https://github.com/casbin/pycasbin/commit/f167ebf40f5d170745a3f48692d2185e205f3449))
+- added distributed enforcer file along with respective unit tests ([f167ebf](https://github.com/casbin/pycasbin/commit/f167ebf40f5d170745a3f48692d2185e205f3449))
 
 ## [0.19.2](https://github.com/casbin/pycasbin/compare/v0.19.1...v0.19.2) (2021-04-01)
 
-
 ### Bug Fixes
 
-* Added checks in init_with_model_and_adapter in CoreEnforcer ([1c55727](https://github.com/casbin/pycasbin/commit/1c55727661616edc62865f4ffd15e3f262ddf1d5))
+- Added checks in init_with_model_and_adapter in CoreEnforcer ([1c55727](https://github.com/casbin/pycasbin/commit/1c55727661616edc62865f4ffd15e3f262ddf1d5))
 
 ## [0.19.1](https://github.com/casbin/pycasbin/compare/v0.19.0...v0.19.1) (2021-03-18)
 
-
 ### Bug Fixes
 
-* relocate unittest and fix file path ([5ed07b2](https://github.com/casbin/pycasbin/commit/5ed07b2f2aef9137a35048d3921d9986bae3254c))
+- relocate unittest and fix file path ([5ed07b2](https://github.com/casbin/pycasbin/commit/5ed07b2f2aef9137a35048d3921d9986bae3254c))
 
 # [0.19.0](https://github.com/casbin/pycasbin/compare/v0.18.4...v0.19.0) (2021-03-18)
 
-
 ### Features
 
-* Added dispatcher class ([5c4a992](https://github.com/casbin/pycasbin/commit/5c4a992971a492874cfd32dc4eb94a3d61dbfcd7))
+- Added dispatcher class ([5c4a992](https://github.com/casbin/pycasbin/commit/5c4a992971a492874cfd32dc4eb94a3d61dbfcd7))
 
 ## [0.18.4](https://github.com/casbin/pycasbin/compare/v0.18.3...v0.18.4) (2021-03-17)
 
-
 ### Performance Improvements
 
-* Added code to convert config value to different types ([c87fdfa](https://github.com/casbin/pycasbin/commit/c87fdfa37f68e9c32e198e044862a9a2f1cb36b7))
+- Added code to convert config value to different types ([c87fdfa](https://github.com/casbin/pycasbin/commit/c87fdfa37f68e9c32e198e044862a9a2f1cb36b7))
 
 ## [0.18.3](https://github.com/casbin/pycasbin/compare/v0.18.2...v0.18.3) (2021-03-12)
 
-
 ### Performance Improvements
 
-* refacto & improve performance ([ff7f288](https://github.com/casbin/pycasbin/commit/ff7f288f487f5eab6b29898eb81f68257e6eb508))
+- refacto & improve performance ([ff7f288](https://github.com/casbin/pycasbin/commit/ff7f288f487f5eab6b29898eb81f68257e6eb508))
 
 ## [0.18.2](https://github.com/casbin/pycasbin/compare/v0.18.1...v0.18.2) (2021-03-02)
 
-
 ### Bug Fixes
 
-* typo ([32a572f](https://github.com/casbin/pycasbin/commit/32a572fcc4b114d93ffd59508a85e90297fd9744))
+- typo ([32a572f](https://github.com/casbin/pycasbin/commit/32a572fcc4b114d93ffd59508a85e90297fd9744))
 
 ## [0.18.1](https://github.com/casbin/pycasbin/compare/v0.18.0...v0.18.1) (2021-02-25)
 
-
 ### Performance Improvements
 
-* reposition build_role_links() ([396ef7a](https://github.com/casbin/pycasbin/commit/396ef7ae5a650a102751dd602aed4ddd2775efba))
+- reposition build_role_links() ([396ef7a](https://github.com/casbin/pycasbin/commit/396ef7ae5a650a102751dd602aed4ddd2775efba))
 
 # [0.18.0](https://github.com/casbin/pycasbin/compare/v0.17.0...v0.18.0) (2021-02-23)
 
-
 ### Features
 
-* add AddNamedDomainMatchingFunc and AddNamedMatchingFunc to enforcer ([#122](https://github.com/casbin/pycasbin/issues/122)) ([e01f393](https://github.com/casbin/pycasbin/commit/e01f393c8c41a954b201ecf9de2ad2350f87b651))
+- add AddNamedDomainMatchingFunc and AddNamedMatchingFunc to enforcer ([#122](https://github.com/casbin/pycasbin/issues/122)) ([e01f393](https://github.com/casbin/pycasbin/commit/e01f393c8c41a954b201ecf9de2ad2350f87b651))
 
 # [0.17.0](https://github.com/casbin/pycasbin/compare/v0.16.2...v0.17.0) (2021-02-19)
 
-
 ### Features
 
-* add update_policy() ([7f7d26f](https://github.com/casbin/pycasbin/commit/7f7d26fe3f6cddcf54a2e42cef83565eb21e202c))
+- add update_policy() ([7f7d26f](https://github.com/casbin/pycasbin/commit/7f7d26fe3f6cddcf54a2e42cef83565eb21e202c))
 
 ## [0.16.2](https://github.com/casbin/pycasbin/compare/v0.16.1...v0.16.2) (2021-02-03)
 
-
 ### Performance Improvements
 
-* remove duplicated check ([#117](https://github.com/casbin/pycasbin/issues/117)) ([6aebadf](https://github.com/casbin/pycasbin/commit/6aebadf0a344e453ca2a1e9c0ae3b0d2f1c3d2c7))
+- remove duplicated check ([#117](https://github.com/casbin/pycasbin/issues/117)) ([6aebadf](https://github.com/casbin/pycasbin/commit/6aebadf0a344e453ca2a1e9c0ae3b0d2f1c3d2c7))
 
 ## [0.16.1](https://github.com/casbin/pycasbin/compare/v0.16.0...v0.16.1) (2021-01-29)
 
-
 ### Bug Fixes
 
-* role manager with matching_func ([8079cda](https://github.com/casbin/pycasbin/commit/8079cda8a28409e9502508fe2bdf9b0bddac3f98))
+- role manager with matching_func ([8079cda](https://github.com/casbin/pycasbin/commit/8079cda8a28409e9502508fe2bdf9b0bddac3f98))
 
 # [0.16.0](https://github.com/casbin/pycasbin/compare/v0.15.0...v0.16.0) (2021-01-09)
 
-
 ### Features
 
-* add batch api to SyncedEnforcer ([9191ccd](https://github.com/casbin/pycasbin/commit/9191ccd72cbeed6e36303d4cbf0407b626718421))
-* add batch_adapter ([9470c3e](https://github.com/casbin/pycasbin/commit/9470c3ebf678ac4c64bffea623fb9a974f4f2e95))
+- add batch api to SyncedEnforcer ([9191ccd](https://github.com/casbin/pycasbin/commit/9191ccd72cbeed6e36303d4cbf0407b626718421))
+- add batch_adapter ([9470c3e](https://github.com/casbin/pycasbin/commit/9470c3ebf678ac4c64bffea623fb9a974f4f2e95))
 
 # [0.15.0](https://github.com/casbin/pycasbin/compare/v0.14.0...v0.15.0) (2020-12-26)
 
-
 ### Features
 
-* add filtered_adapter ([ee817b5](https://github.com/casbin/pycasbin/commit/ee817b521b94aaf90533906efd158c761b25f9f4))
+- add filtered_adapter ([ee817b5](https://github.com/casbin/pycasbin/commit/ee817b521b94aaf90533906efd158c761b25f9f4))
 
 # [0.14.0](https://github.com/casbin/pycasbin/compare/v0.13.0...v0.14.0) (2020-12-23)
 
-
 ### Features
 
-* add function get_role_manager ([7fb1879](https://github.com/casbin/pycasbin/commit/7fb1879e3bbdc77ea5e01ac46f96d81f917cb6fe))
-* add SyncedEnforcer ([9439272](https://github.com/casbin/pycasbin/commit/94392722a1fd4680a7f4072ae20b176e8225be15))
+- add function get_role_manager ([7fb1879](https://github.com/casbin/pycasbin/commit/7fb1879e3bbdc77ea5e01ac46f96d81f917cb6fe))
+- add SyncedEnforcer ([9439272](https://github.com/casbin/pycasbin/commit/94392722a1fd4680a7f4072ae20b176e8225be15))
 
 # [0.13.0](https://github.com/casbin/pycasbin/compare/v0.12.0...v0.13.0) (2020-12-14)
 
-
 ### Features
 
-* add glob pattern matching using fnmatch module ([41ba828](https://github.com/casbin/pycasbin/commit/41ba828b2cecd21df79a5ec905d9d4de9506b918))
+- add glob pattern matching using fnmatch module ([41ba828](https://github.com/casbin/pycasbin/commit/41ba828b2cecd21df79a5ec905d9d4de9506b918))
 
 # [0.12.0](https://github.com/casbin/pycasbin/compare/v0.11.0...v0.12.0) (2020-12-07)
 
-
 ### Features
 
-* add semantic-release-pypi plugin ([e53d842](https://github.com/casbin/pycasbin/commit/e53d84283952b3b66720e6d50ae91030880fe839))
+- add semantic-release-pypi plugin ([e53d842](https://github.com/casbin/pycasbin/commit/e53d84283952b3b66720e6d50ae91030880fe839))
 
 # [0.11.0](https://github.com/casbin/pycasbin/compare/v0.10.0...v0.11.0) (2020-12-01)
 
-
 ### Features
 
-* add eval function ([9604fbf](https://github.com/casbin/pycasbin/commit/9604fbf91a22149dab531183576c8a4e7078a4d0))
+- add eval function ([9604fbf](https://github.com/casbin/pycasbin/commit/9604fbf91a22149dab531183576c8a4e7078a4d0))
 
 # [0.10.0](https://github.com/casbin/pycasbin/compare/v0.9.0...v0.10.0) (2020-11-10)
 
-
 ### Bug Fixes
 
-* improve KeyMatch and add tests ([f62a2b2](https://github.com/casbin/pycasbin/commit/f62a2b2920e870a879d004148117019137805c09))
-
+- improve KeyMatch and add tests ([f62a2b2](https://github.com/casbin/pycasbin/commit/f62a2b2920e870a879d004148117019137805c09))
 
 ### Features
 
-* support semantic-release ([f346ab4](https://github.com/casbin/pycasbin/commit/f346ab45602d0820e88de5c3febfea4a6a5cc7b1))
+- support semantic-release ([f346ab4](https://github.com/casbin/pycasbin/commit/f346ab45602d0820e88de5c3febfea4a6a5cc7b1))
