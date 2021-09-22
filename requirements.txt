@@ -1,2 +1,3 @@
-simpleeval>=0.9.10
-wcmatch >= 8.1.2
+bracex==2.1.1
+unicode==2.8
+wcmatch==8.2

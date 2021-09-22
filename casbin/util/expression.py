@@ -1,4 +1,4 @@
-from simpleeval import SimpleEval
+from casbin.simpleeval.simpleeval import SimpleEval
 import ast
 
 
