@@ -1,6 +1,6 @@
 # Semantic Versioning Changelog
 
-## [1.1.7]
+## [1.1.8]
 
 - simpleeval broken dependencies fixed
 
