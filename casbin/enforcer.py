@@ -67,7 +67,7 @@ class Enforcer(ManagementEnforcer):
         """
         res1 = await self.remove_filtered_grouping_policy(1, role)
 
-        res2 = self.remove_filtered_policy(0, role)
+        res2 = await self.remove_filtered_policy(0, role)
         return res1 or res2
 
     async def delete_permission(self, *permission):
